@@ -260,10 +260,20 @@ change background image
   align-items: center;
 }
 
-.equipment-header {
+.equipment-header h1 {
+  font-size: 45px;
   letter-spacing: 15px;
   color:  #003c6c;
   margin-top: 50px;
+  transition: transform 0.2s ease-out;
+}
+
+.equipment-header h1:hover {
+  transform: scale(1.05);
+}
+
+.equipment-header h1:not(:hover) {
+  transform: scale(1);
 }
 
 .input-wrapper {
