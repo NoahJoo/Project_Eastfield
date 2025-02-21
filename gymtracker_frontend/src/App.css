@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5 {
 }
 @media (min-width: 576px) {
   .header-container {
-    width:95%;
+    width: 95%;
   }
 }
 
@@ -147,27 +147,27 @@ header .nav-links li {
   transition: transform 0.2s ease-out;
 }
 
-@media(max-width: 996px){
+@media (max-width: 996px) {
   .welcome-header {
     font-size: 40px;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .welcome-header {
     font-size: 38px;
     letter-spacing: 13px;
   }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
   .welcome-header {
     font-size: 33px;
     letter-spacing: 10px;
   }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .welcome-header {
     font-size: 30px;
     letter-spacing: 9px;
@@ -230,26 +230,26 @@ header .nav-links li {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
-@media(max-width: 996px) {
+@media (max-width: 996px) {
   .num-of-people {
     font-size: 70px;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .num-of-people {
     font-size: 60px;
   }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
   .num-of-people {
     font-size: 50px;
     margin-top: 10px; 
   }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .num-of-people {
     font-size: 40px;
     margin-top: 10px; 
@@ -269,19 +269,19 @@ header .nav-links li {
 }
 
 /*--------------------"people in the gym"--------------------*/
-@media(max-width:996px) {
+@media (max-width: 996px) {
   .welcome h2 { 
     font-size: 22px;
   }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .welcome h2 { 
     font-size: 20px;
   }
 }
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
   .welcome h2 { 
     font-size: 17px;
   }
@@ -334,26 +334,26 @@ header .nav-links li {
   transition: transform 0.2s ease-out;
 }
 
-@media(max-width: 996px) {
+@media (max-width: 996px) {
   .gym-schedule h1 {
     font-size: 40px;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .gym-schedule h1 {
     font-size: 38px;
     letter-spacing: 13px;
   }
 }
-@media(max-width: 576px) {
+@media (max-width: 576px) {
   .gym-schedule h1 {
     font-size: 33px;
     letter-spacing: 10px;
   }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .gym-schedule h1 {
     font-size: 30px;
     letter-spacing: 9px;
@@ -386,7 +386,7 @@ header .nav-links li {
   padding-left: 20px;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .days {
     font-size: 16px;
   }
@@ -395,7 +395,8 @@ header .nav-links li {
     font-size: 16px;
   }
 }
-@media(max-width: 576px) {
+
+@media (max-width: 576px) {
   .days {
     font-size: 14px;
   }
@@ -404,13 +405,14 @@ header .nav-links li {
     font-size: 14px;
   }
 }
-@media(max-width: 480px) {
+
+@media (max-width: 480px) {
   .days {
     font-size: 12px;
   }
 
   .hours {
-    font-size:12px;
+    font-size: 12px;
   }
 }
 
