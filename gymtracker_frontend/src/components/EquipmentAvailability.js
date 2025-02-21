@@ -42,7 +42,7 @@ export const EquipmentAvailability = () => {
                 <div className="machines-list">
                     {filter.length > 0 && (
                         filter.map((machine, index) => (
-                            <div key={index} className="machine">
+                            <div className="machine" key={index} style={{opacity: 0, animationDelay: `${index * 0.15}s`}}>
                                 <h2>{machine.name}</h2>
                                 <h5>Muscles targeted: {machine.muscles.join(", ")}</h5>
                             </div>
