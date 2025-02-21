@@ -1,4 +1,4 @@
-/*Base Styles*/
+/*--------------------fonts--------------------*/
 @font-face {
   font-family: "Altitude";
   src: url("fonts/Altitude.otf") format("opentype");
@@ -14,6 +14,7 @@
   src: url("fonts/Oswald/static/Oswald-Bold.ttf") format("truetype");
 }
 
+/*--------------------base styles--------------------*/
 html {
   font-family: "Roboto";
   color: white;
@@ -31,41 +32,42 @@ h1, h2, h3, h4, h5 {
   padding: 0;
 }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 90%;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 85%;
-  }
-
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 80%;
-  }
-}
-@media (min-width: 576px) {
-  .container {
-    width:95%;
-  }
-}
-
 *,
 *:before,
 *:after {
     box-sizing: border-box;
 }
 
+/*--------------------header container--------------------*/
+.header-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .header-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 996px) {
+  .header-container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    width: 80%;
+  }
+}
+@media (min-width: 576px) {
+  .header-container {
+    width:95%;
+  }
+}
+
+/*--------------------header content--------------------*/
 header {
   background-color: #003c6c;
 }
@@ -111,6 +113,7 @@ header .nav-links li {
   display: inline-block;
 }
 
+/*--------------------home page--------------------*/
 .home-page {
   background-image: url("images/home-background.jpg");
   background-size: cover;
@@ -127,6 +130,7 @@ header .nav-links li {
   overflow: hidden;
 }
 
+/*--------------------welcome header and message--------------------*/
 .welcome {
   width: 100%;
   background-color: rgba(0, 59, 108, 0.6);
@@ -134,6 +138,7 @@ header .nav-links li {
   margin-top: 100px;
 }
 
+/*--------------------welcome header resizing--------------------*/
 .welcome-header {
   font-size: 45px;
   letter-spacing: 15px;
@@ -141,31 +146,35 @@ header .nav-links li {
   padding-top: 50px;
   transition: transform 0.2s ease-out;
 }
-@media(max-width:997px){
-  .welcome-header{
+
+@media(max-width: 996px){
+  .welcome-header {
     font-size: 40px;
   }
 }
-@media(max-width:768px) {
-  .welcome-header{
+
+@media(max-width: 768px) {
+  .welcome-header {
     font-size: 38px;
     letter-spacing: 13px;
   }
 }
+
 @media(max-width: 576px) {
-  .welcome-header{
+  .welcome-header {
     font-size: 33px;
     letter-spacing: 10px;
   }
 }
 
 @media(max-width: 480px) {
-  .welcome-header{
+  .welcome-header {
     font-size: 30px;
     letter-spacing: 9px;
   }
 }
 
+/*--------------------welcome header animation--------------------*/
 .welcome-header:hover {
   transform: scale(1.05);
 }
@@ -173,7 +182,8 @@ header .nav-links li {
 .welcome-header:not(:hover) {
   transform: scale(1);
 }
-/*--------------------welcome-msg-------------------- */
+
+/*--------------------welcome message resizing--------------------*/
 .welcome-msg {
   font-size: 15px;
   line-height: 1.8;
@@ -181,33 +191,36 @@ header .nav-links li {
   padding-right: 320px;
 }
 
-@media (max-width:996px){
-  .welcome-msg{
+@media (max-width: 996px) {
+  .welcome-msg {
     padding-left: 140px;
     padding-right: 140px;
   }
 }
 
-@media (max-width:768px){
-  .welcome-msg{
+@media (max-width: 768px) {
+  .welcome-msg {
+    font-size: 14px;
     padding-left: 120px;
     padding-right: 120px;
-    font-size: 14px;
   }
 }
-@media (max-width:576px){
-  .welcome-msg{
+
+@media (max-width: 576px) {
+  .welcome-msg {
     padding-left: 100px;
     padding-right: 100px;
   }
 }
-@media (max-width:480px){
-  .welcome-msg{
+
+@media (max-width: 480px) {
+  .welcome-msg {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
-/*--------------------num-of-people-------------------- */
+
+/*--------------------num of people resizing--------------------*/
 .num-of-people {
   font-family: "Oswald";
   font-size: 80px;
@@ -216,48 +229,34 @@ header .nav-links li {
   padding: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
-@media(max-width:996px){
-  .num-of-people{
-    font-size:70px;
+
+@media(max-width: 996px) {
+  .num-of-people {
+    font-size: 70px;
   }
 }
-@media(max-width:768px){
-  .num-of-people{
-    font-size:60px;
+
+@media(max-width: 768px) {
+  .num-of-people {
+    font-size: 60px;
   }
 }
-@media(max-width:576px){
-  .num-of-people{
+
+@media(max-width: 576px) {
+  .num-of-people {
     font-size: 50px;
     margin-top: 10px; 
   }
 }
-@media(max-width:480px){
-  .num-of-people{
+
+@media(max-width: 480px) {
+  .num-of-people {
     font-size: 40px;
     margin-top: 10px; 
   }
 }
-/* "people in the gym" == welcome h2*/
-@media(max-width:996px){
-  .welcome h2{ 
-    font-size: 22px;
-  }
-}
 
-@media(max-width:768px){
-  .welcome h2{ 
-    font-size: 20px;
-  }
-}
-
-@media(max-width:480px){
-  .welcome h2{ 
-    font-size: 17px;
-  }
-}
-
-
+/*--------------------num of people animation--------------------*/
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -269,6 +268,26 @@ header .nav-links li {
   }
 }
 
+/*--------------------"people in the gym"--------------------*/
+@media(max-width:996px) {
+  .welcome h2 { 
+    font-size: 22px;
+  }
+}
+
+@media(max-width:768px) {
+  .welcome h2 { 
+    font-size: 20px;
+  }
+}
+
+@media(max-width:480px) {
+  .welcome h2 { 
+    font-size: 17px;
+  }
+}
+
+/*--------------------gym status and waiting line--------------------*/
 .gym-status {
   margin-top: 50px;
   margin-bottom: 10px;
@@ -293,6 +312,7 @@ header .nav-links li {
   padding-left: 10px;
 }
 
+/*--------------------gym schedule--------------------*/
 .gym-schedule {
   background-color: rgba(242, 152, 19, 0.6);
   width: 100%;
@@ -303,7 +323,8 @@ header .nav-links li {
   margin-bottom: 100px;
   padding: 50px;
 }
-/*--------------------gym-schedule h1-------------------- */
+
+/*--------------------gym schedule header resizing-------------------- */
 .gym-schedule h1 {
   font-size: 45px;
   letter-spacing: 15px;
@@ -312,31 +333,34 @@ header .nav-links li {
   text-align: center;
   transition: transform 0.2s ease-out;
 }
-@media(max-width:997px){
-  .gym-schedule h1{
+
+@media(max-width: 996px) {
+  .gym-schedule h1 {
     font-size: 40px;
   }
 }
-@media(max-width:768px) {
-  .gym-schedule h1{
+
+@media(max-width: 768px) {
+  .gym-schedule h1 {
     font-size: 38px;
     letter-spacing: 13px;
   }
 }
 @media(max-width: 576px) {
-  .gym-schedule h1{
+  .gym-schedule h1 {
     font-size: 33px;
     letter-spacing: 10px;
   }
 }
 
 @media(max-width: 480px) {
-  .gym-schedule h1{
+  .gym-schedule h1 {
     font-size: 30px;
     letter-spacing: 9px;
   }
 }
 
+/*--------------------gym schedule header animation--------------------*/
 .gym-schedule h1:hover {
   transform: scale(1.05);
 }
@@ -345,39 +369,16 @@ header .nav-links li {
   transform: scale(1);
 }
 
+/*--------------------days and hours resizing--------------------*/
 .schedule-container {
   display: flex;
   justify-content: center;
 }
-/*--------------------days-------------------- */
+
 .days {
   text-align: center;
   padding-right: 20px;
   border-right: 2px solid white;
-}
-@media(max-width: 768px){
-  .days{
-    font-size: 16px;
-  }
-  .hours{
-    font-size: 16px;
-  }
-}
-@media(max-width:576px){
-  .days{
-    font-size: 14px;
-  }
-  .hours{
-    font-size:14px;
-  }
-}
-@media(max-width:480px){
-  .days{
-    font-size: 12px;
-  }
-  .hours{
-    font-size:12px;
-  }
 }
 
 .hours {
@@ -385,14 +386,40 @@ header .nav-links li {
   padding-left: 20px;
 }
 
+@media(max-width: 768px) {
+  .days {
+    font-size: 16px;
+  }
+
+  .hours {
+    font-size: 16px;
+  }
+}
+@media(max-width: 576px) {
+  .days {
+    font-size: 14px;
+  }
+
+  .hours {
+    font-size: 14px;
+  }
+}
+@media(max-width: 480px) {
+  .days {
+    font-size: 12px;
+  }
+
+  .hours {
+    font-size:12px;
+  }
+}
 
 .days h3, .hours h3 {
   padding: 8px;
 }
 
-/*
-change background image + equipment availbility page
-*/
+/*--------------------equipment page--------------------*/
+/*change background image*/
 .equipment-page {
   background-image: url("images/home-background.jpg");
   background-size: cover;
@@ -408,7 +435,8 @@ change background image + equipment availbility page
   flex-direction: column;
   align-items: center;
 }
-/*--------------------equipment-header h1-------------------- */
+
+/*--------------------equipment header resizing--------------------*/
 .equipment-header h1 {
   font-size: 45px;
   letter-spacing: 10px;
@@ -417,26 +445,31 @@ change background image + equipment availbility page
   transition: transform 0.2s ease-out;
 }
 
-@media (max-width:996px) {
-  .equipment-header h1{
+@media (max-width: 996px) {
+  .equipment-header h1 {
     font-size: 43px;
   }
 }
-@media (max-width:768px) {
-  .equipment-header h1{
+
+@media (max-width: 768px) {
+  .equipment-header h1 {
     font-size: 40px;
   }
 }
-@media (max-width:576px) {
-  .equipment-header h1{
+
+@media (max-width: 576px) {
+  .equipment-header h1 {
     font-size: 35px;
   }
 }
-@media (max-width:480px){
-  .equipment-header h1{
+
+@media (max-width: 480px) {
+  .equipment-header h1 {
     font-size: 30px;
   }
 }
+
+/*--------------------equipment header animation--------------------*/
 .equipment-header h1:hover {
   transform: scale(1.05);
 }
@@ -445,11 +478,12 @@ change background image + equipment availbility page
   transform: scale(1);
 }
 
+/*--------------------input resizing--------------------*/
 .input-wrapper {
-  width: 100%;
+  width: 50%;
   margin: 50px;
 }
-/*--------------------input-------------------- */
+
 input {
   width: 100%;
   background-color: #ffffff;
@@ -458,12 +492,14 @@ input {
   font-size: 14px;
   padding: 12px 12px;
 }
-@media (max-width:768px) {
+
+@media (max-width: 768px) {
   .input-wrapper {
     width: 80%;
-    margin:25px;
+    margin: 25px;
   }
-  input{
+
+  input {
     font-size: 12px;
   }
 }
@@ -471,24 +507,24 @@ input {
 input:focus {
   outline: none;
 }
-/*-------------------- machine-list-------------------- */
+
+/*--------------------machines list resizing--------------------*/
 .machines-list {
   width: 50%;
   margin-bottom: 30px;
 }
 
 @media (max-width: 996px) {
-  .machines-list{
+  .machines-list {
     width: 80%;
   }
+
   .machine {
     width: 100%;
   }
 }
 
-/*-------------------- machine-------------------- */
-
-
+/*--------------------machine resizing--------------------*/
 .machine {
   background-color: rgba(0, 60, 108, 0.8);
   border-radius: 8px;
@@ -497,6 +533,44 @@ input:focus {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+.machine h2 {
+  letter-spacing: 5px;
+  font-size: 28px;
+}
+
+.machine h5 {
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 996px) {
+  .machine h2 {
+    font-size: 25px;
+    letter-spacing: 4px;
+  }
+
+  .machine h5 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .machine h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .machine h2 {
+    font-size: 18px;
+  }
+
+  .machine h5 {
+    font-size: 10px;
+  }
+}
+
+/*--------------------machine animation--------------------*/
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -508,50 +582,8 @@ input:focus {
   }
 }
 
-
-/*-------------------- machine h2-------------------- */
-.machine h2 {
-  letter-spacing: 5px;
-  font-size: 28px;
-}
-
-@media (max-width: 996px) {
-  .machine h2 {
-    font-size: 25px;
-    letter-spacing: 4px;
-  }
-}
-
-@media (max-width: 768px) {
-  .machine h2 {
-    font-size: 20px;
-  }
-}
-@media (max-width: 576px) {
-  .machine h2{
-    font-size: 18px;
-  }
-}
-
-/*-------------------- machine h5-------------------- */
-.machine h5 {
-  padding-top: 10px;
-  font-size: 18px;
-}
-@media (max-width: 996px) {
-  .machine h5{
-    font-size: 15px;
-  }
-}
-@media (max-width:576px) {
-  .machine h5{
-    font-size: 10px;
-  }
-}
-
-/*
-change background image
-*/
+/*--------------------workout page--------------------*/
+/*change background image*/
 .workout-page {
   background-image: url("images/home-background.jpg");
   background-size: cover;

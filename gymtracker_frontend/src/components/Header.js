@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export const Header = () => {
   return (
     <header>
-        <div className="container">
+        <div className="header-container">
             <div className="inner-content">
                 <div className="brand">
                     <Link to="/">SLUGTRACKER</Link>
