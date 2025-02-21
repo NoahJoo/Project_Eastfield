@@ -262,6 +262,7 @@ header .nav-links li {
     opacity: 0;
     transform: translateY(40%);
   }
+  
   100% {
     opacity: 1;
     transform: translateY(0%);
@@ -578,6 +579,7 @@ input:focus {
     opacity: 0;
     transform: translateY(40%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0%);
