@@ -1,3 +1,4 @@
+/*Base Styles*/
 @font-face {
   font-family: "Altitude";
   src: url("fonts/Altitude.otf") format("opentype");
@@ -35,21 +36,27 @@ h1, h2, h3, h4, h5 {
   margin-left: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .container {
-    width: 750px;
+    width: 90%;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 85%;
   }
+
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .container {
-    width: 1170px;
+    width: 80%;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    width:95%;
   }
 }
 
@@ -259,15 +266,35 @@ change background image
   flex-direction: column;
   align-items: center;
 }
-
+/*--------------------equipment-header h1-------------------- */
 .equipment-header h1 {
   font-size: 45px;
-  letter-spacing: 15px;
+  letter-spacing: 10px;
   color:  #003c6c;
   margin-top: 50px;
   transition: transform 0.2s ease-out;
 }
 
+@media (max-width:996px) {
+  .equipment-header h1{
+    font-size: 43px;
+  }
+}
+@media (max-width:768px) {
+  .equipment-header h1{
+    font-size: 40px;
+  }
+}
+@media (max-width:576px) {
+  .equipment-header h1{
+    font-size: 35px;
+  }
+}
+@media (max-width:480px){
+  .equipment-header h1{
+    font-size: 30px;
+  }
+}
 .equipment-header h1:hover {
   transform: scale(1.05);
 }
@@ -280,7 +307,7 @@ change background image
   width: 50%;
   margin: 50px;
 }
-
+/*--------------------input-------------------- */
 input {
   width: 100%;
   background-color: #ffffff;
@@ -290,28 +317,74 @@ input {
   padding: 12px 12px;
 }
 
+
 input:focus {
   outline: none;
 }
-
+/*-------------------- machine-list-------------------- */
 .machines-list {
   width: 50%;
   margin-bottom: 30px;
 }
 
+@media (max-width: 996px) {
+  .machines-list{
+    width: 90%;
+  }
+  .machine {
+    width: 100%;
+  }
+}
+
+/*-------------------- machine-------------------- */
+
+
 .machine {
   background-color: rgba(0, 60, 108, 0.8);
   border-radius: 8px;
   margin-bottom: 15px;
-  padding: 12px 15px; 
+  padding: 12px 15px;
 }
 
+
+/*-------------------- machine h2-------------------- */
 .machine h2 {
   letter-spacing: 5px;
+  font-size: 28px;
 }
 
+@media (max-width: 996px) {
+  .machine h2 {
+    font-size: 25px;
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .machine h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .machine h2{
+    font-size: 18px;
+  }
+}
+
+/*-------------------- machine h5-------------------- */
 .machine h5 {
   padding-top: 10px;
+  font-size: 18px;
+}
+@media (max-width: 996px) {
+  .machine h5{
+    font-size: 15px;
+  }
+}
+@media (max-width:576px) {
+  .machine h5{
+    font-size: 10px;
+  }
 }
 
 /*
