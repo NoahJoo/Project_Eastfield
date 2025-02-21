@@ -141,6 +141,11 @@ header .nav-links li {
   padding-top: 50px;
   transition: transform 0.2s ease-out;
 }
+@media(max-width:997px){
+  .welcome-header{
+    font-size:30px;
+  }
+}
 
 .welcome-header:hover {
   transform: scale(1.05);
@@ -249,7 +254,7 @@ header .nav-links li {
 }
 
 /*
-change background image
+change background image + equipment availbility page
 */
 .equipment-page {
   background-image: url("images/home-background.jpg");
@@ -304,7 +309,7 @@ change background image
 }
 
 .input-wrapper {
-  width: 50%;
+  width: 100%;
   margin: 50px;
 }
 /*--------------------input-------------------- */
@@ -316,7 +321,15 @@ input {
   font-size: 14px;
   padding: 12px 12px;
 }
-
+@media (max-width:768px) {
+  .input-wrapper {
+    width: 100%;
+    margin:0px;
+  }
+  input{
+    font-size: 12px;
+  }
+}
 
 input:focus {
   outline: none;
@@ -329,7 +342,7 @@ input:focus {
 
 @media (max-width: 996px) {
   .machines-list{
-    width: 90%;
+    width: 80%;
   }
   .machine {
     width: 100%;
