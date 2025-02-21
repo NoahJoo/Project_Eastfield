@@ -4,8 +4,8 @@ export const Home = () => {
     return (
         <div className="home-page">
             <div className="home-container">
-                <div className="welcome">
-                    <h1 className="welcome-header">TRACK, PLAN, LIFT</h1>
+                <div className="welcome"> 
+                    <h1 className="welcome-header">TRACK, PLAN, LIFT</h1> 
 
                     <h3 className="welcome-msg">
                         Use SlugTracker to track gym occupancy in real-time and receive live updates on facility
