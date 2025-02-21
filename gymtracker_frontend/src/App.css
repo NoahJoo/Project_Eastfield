@@ -25,7 +25,7 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
@@ -113,7 +113,7 @@ header .nav-links li {
   min-height: 100vh;
 }
 
-.home-page .container {
+.home-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -178,6 +178,7 @@ header .nav-links li {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 30px;
   padding: 50px;
 }
 
@@ -205,5 +206,80 @@ header .nav-links li {
 }
 
 .days h3, .hours h3 {
-  padding: 5px;
+  padding: 8px;
+}
+
+/*
+change background image
+*/
+.equipment-page {
+  background-image: url("images/home-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
+}
+
+.equipment-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equipment-header {
+  letter-spacing: 15px;
+  color:  #003c6c;
+  margin-top: 50px;
+}
+
+.input-wrapper {
+  width: 50%;
+  margin: 50px;
+}
+
+input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 3px solid #003c6c;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 12px 12px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.machines-list {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.machine {
+  background-color: rgba(0, 60, 108, 0.8);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 12px 15px; 
+}
+
+.machine h2 {
+  letter-spacing: 5px;
+}
+
+.machine h5 {
+  padding-top: 10px;
+}
+
+/*
+change background image
+*/
+.workout-page {
+  background-image: url("images/home-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
 }

@@ -2,6 +2,9 @@ import React from "react";
 
 export const WorkoutRecommendations = () => {
     return (
-        <h1>Workout Recommendations</h1>
+        <div className="workout-page">
+            <div className="workout-container">
+            </div>
+        </div>
     )
 }
