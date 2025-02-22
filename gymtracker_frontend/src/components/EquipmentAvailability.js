@@ -1,16 +1,23 @@
 import React, {useState} from "react";
 
 const machines = [
-    {name: "Chest Press", muscles: ["chest", "front delts", "triceps"]},
-    {name: "Chest Fly", muscles: ["chest", "front delts"]},
-    {name: "Lateral Raise", muscles: ["side delts"]},
-    {name: "Lat Pulldown", muscles: ["lats", "biceps"]},
-    {name: "Wide Row", muscles: ["lats", "traps", "rear delts", "biceps"]},
+    {name: "Chest Press", muscles: ["chest", "shoulders (front delts)", "triceps"]},
+    {name: "Chest Fly", muscles: ["chest", "shoulders (front delts)"]},
+    {name: "Shoulder Press", muscles: ["shoulders (front delts, side delts)"]},
+    {name: "Lateral Raise", muscles: ["shoulders (side delts)"]},
+    {name: "Lat Pulldown", muscles: ["back (lats)", "biceps"]},
+    {name: "Row", muscles: ["back (lats, traps)", "shoulders (rear delts)"]},
+    {name: "Back Extension", muscles: ["back (erector spinae)"]},
     {name: "Preacher Curl", muscles: ["biceps"]},
-    {name: "Tricep Pushdown", muscles: ["triceps"]},
-    {name: "Leg Press", muscles: ["quads", "glutes", "hamstrings"]},
-    {name: "Leg Extension", muscles: ["quads"]},
-    {name: "Leg Curl", muscles: ["hamstrings"]},
+    {name: "Tricep Extension", muscles: ["triceps"]},
+    {name: "Leg Press", muscles: ["legs (quads, hamstrings, glutes)"]},
+    {name: "Leg Extension", muscles: ["legs (quads)"]},
+    {name: "Leg Curl", muscles: ["legs (hamstrings)"]},
+    {name: "Hip Abductor", muscles: ["legs (glutes)"]},
+    {name: "Hip and Glute", muscles: ["legs (glutes)"]},
+    {name: "Calf Raise", muscles: ["calves"]},
+    {name: "Abdominal Crunch", muscles: ["abs"]}
+    
 ]
 
 export const EquipmentAvailability = () => {
@@ -42,7 +49,7 @@ export const EquipmentAvailability = () => {
                 <div className="machines-list">
                     {filter.length > 0 && (
                         filter.map((machine, index) => (
-                            <div className="machine" key={index} style={{opacity: 0, animationDelay: `${index * 0.15}s`}}>
+                            <div className="machine" key={index} style={{animationDelay: `${index * 0.1}s`}}>
                                 <h2>{machine.name}</h2>
                                 <h5>Muscles targeted: {machine.muscles.join(", ")}</h5>
                             </div>

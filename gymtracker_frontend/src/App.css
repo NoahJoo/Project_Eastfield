@@ -39,44 +39,47 @@ h1, h2, h3, h4, h5 {
 }
 
 /*--------------------header container--------------------*/
-.header-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 1200px) {
-  .header-container {
-    width: 90%;
-  }
-}
-
-@media (min-width: 996px) {
-  .header-container {
-    width: 85%;
-  }
-}
-
-@media (min-width: 768px) {
-  .header-container {
-    width: 80%;
-  }
-}
-@media (min-width: 576px) {
-  .header-container {
-    width: 95%;
-  }
-}
-
-/*--------------------header content--------------------*/
 header {
   background-color: #003c6c;
 }
 
+.header-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+@media (max-width: 1200px) {
+  .header-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 996px) {
+  .header-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-container {
+    width: 40%;
+  }
+}
+
+/*--------------------header content--------------------*/
 header .inner-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  width: 100%;
 }
   
 header a {
@@ -262,7 +265,7 @@ header .nav-links li {
     opacity: 0;
     transform: translateY(40%);
   }
-  
+
   100% {
     opacity: 1;
     transform: translateY(0%);
@@ -347,6 +350,7 @@ header .nav-links li {
     letter-spacing: 13px;
   }
 }
+
 @media (max-width: 576px) {
   .gym-schedule h1 {
     font-size: 33px;
@@ -517,6 +521,16 @@ input:focus {
   margin-bottom: 30px;
 }
 
+@media (max-width: 1200px) {
+  .machines-list {
+    width: 65%;
+  }
+
+  .machine {
+    width: 100%;
+  }
+}
+
 @media (max-width: 996px) {
   .machines-list {
     width: 80%;
@@ -533,17 +547,18 @@ input:focus {
   border-radius: 8px;
   margin-bottom: 15px;
   padding: 12px 15px;
+  opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
 
 .machine h2 {
-  letter-spacing: 5px;
   font-size: 28px;
+  letter-spacing: 5px;
 }
 
 .machine h5 {
+  font-size: 17px;
   padding-top: 10px;
-  font-size: 18px;
 }
 
 @media (max-width: 996px) {
@@ -561,6 +576,10 @@ input:focus {
   .machine h2 {
     font-size: 20px;
   }
+  
+  .machine h5 {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -569,7 +588,14 @@ input:focus {
   }
 
   .machine h5 {
-    font-size: 10px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .machine h5 {
+    letter-spacing: 1px;
   }
 }
 
@@ -595,4 +621,53 @@ input:focus {
   background-attachment: fixed;
   display: flex;
   min-height: 100vh;
+}
+
+.workout-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*--------------------workout header resizing--------------------*/
+.workout-header h1 {
+  font-size: 45px;
+  letter-spacing: 10px;
+  color:  #003c6c;
+  margin-top: 50px;
+  transition: transform 0.2s ease-out;
+}
+
+@media (max-width: 996px) {
+  .workout-header h1 {
+    font-size: 43px;
+  }
+}
+
+@media (max-width: 768px) {
+  .workout-header h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .workout-header h1 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workout-header h1 {
+    font-size: 30px;
+  }
+}
+
+/*--------------------workout header animation--------------------*/
+.workout-header h1:hover {
+  transform: scale(1.05);
+}
+
+.workout-header h1:not(:hover) {
+  transform: scale(1);
 }
