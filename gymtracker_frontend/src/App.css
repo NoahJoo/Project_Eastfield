@@ -141,7 +141,7 @@ header .nav-links li {
   margin-top: 100px;
 }
 
-/*--------------------welcome header resizing--------------------*/
+/*--------------------welcome header--------------------*/
 .welcome-header {
   font-size: 45px;
   letter-spacing: 15px;
@@ -186,7 +186,7 @@ header .nav-links li {
   transform: scale(1);
 }
 
-/*--------------------welcome message resizing--------------------*/
+/*--------------------welcome message--------------------*/
 .welcome-msg {
   font-size: 15px;
   line-height: 1.8;
@@ -223,7 +223,7 @@ header .nav-links li {
   }
 }
 
-/*--------------------num of people resizing--------------------*/
+/*--------------------num of people--------------------*/
 .num-of-people {
   font-family: "Oswald";
   font-size: 80px;
@@ -328,13 +328,13 @@ header .nav-links li {
   padding: 50px;
 }
 
-/*--------------------gym schedule header resizing-------------------- */
+/*--------------------gym schedule header-------------------- */
 .gym-schedule h1 {
   font-size: 45px;
   letter-spacing: 15px;
+  text-align: center;
   margin-left: 18px;
   margin-bottom: 30px;
-  text-align: center;
   transition: transform 0.2s ease-out;
 }
 
@@ -374,7 +374,7 @@ header .nav-links li {
   transform: scale(1);
 }
 
-/*--------------------days and hours resizing--------------------*/
+/*--------------------days and hours--------------------*/
 .schedule-container {
   display: flex;
   justify-content: center;
@@ -443,7 +443,7 @@ header .nav-links li {
   align-items: center;
 }
 
-/*--------------------equipment header resizing--------------------*/
+/*--------------------equipment header--------------------*/
 .equipment-header h1 {
   font-size: 45px;
   letter-spacing: 10px;
@@ -485,7 +485,7 @@ header .nav-links li {
   transform: scale(1);
 }
 
-/*--------------------input resizing--------------------*/
+/*--------------------input--------------------*/
 .input-wrapper {
   width: 50%;
   margin: 50px;
@@ -515,7 +515,7 @@ input:focus {
   outline: none;
 }
 
-/*--------------------machines list resizing--------------------*/
+/*--------------------machines list--------------------*/
 .machines-list {
   width: 50%;
   margin-bottom: 30px;
@@ -541,7 +541,7 @@ input:focus {
   }
 }
 
-/*--------------------machine resizing--------------------*/
+/*--------------------machine--------------------*/
 .machine {
   background-color: rgba(0, 60, 108, 0.8);
   border-radius: 8px;
@@ -630,7 +630,7 @@ input:focus {
   align-items: center;
 }
 
-/*--------------------workout header resizing--------------------*/
+/*--------------------workout header--------------------*/
 .workout-header h1 {
   font-size: 45px;
   letter-spacing: 10px;
@@ -670,4 +670,153 @@ input:focus {
 
 .workout-header h1:not(:hover) {
   transform: scale(1);
+}
+
+/*--------------------muscle groups--------------------*/
+.workout-content {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  gap: 30px;
+  margin: 50px;
+}
+
+.muscle-groups {
+  background-color: rgba(0, 59, 108, 0.6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 60px;
+}
+
+.muscle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  flex: 0.5;
+  padding-bottom: 45px;
+}
+
+.muscle-grid h1 {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.push-group, .pull-group {
+  padding-bottom: 10px;
+}
+
+.legs-group, .abs-group {
+  padding-top: 10px;
+}
+
+/*--------------------select muscle--------------------*/
+.muscle {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.muscle.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.select-muscle {
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  transition: background-color 0.3, transform 0.3;
+}
+
+/*--------------------select muscle animation--------------------*/
+.select-muscle:hover {
+  transform: scale(1.2);
+}
+
+.select-muscle.selected {
+  background-color: #f29813;
+  animation: selectExpand 0.1s ease-in-out;
+}
+
+.select-muscle.unselected {
+  background-color: transparent;
+  animation: unselectExpand 0.1s ease-in-out;
+}
+
+@keyframes selectExpand {
+  0% {
+    transform: scale(1.2);
+  }
+
+  25% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes unselectExpand {
+  0% {
+    transform: scale(1.2);
+  }
+
+  25% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/*--------------------submit btn--------------------*/
+.submit-btn {
+  background-color: #9e5e00;
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.front {
+  display: block;
+  background-color: #f29813;
+  color: white;
+  border-radius: 12px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 20px;
+  transform: translateY(-6px);
+}
+
+.submit-btn:disabled {
+  pointer-events: none;
+}
+
+.submit-btn:disabled .front {
+  opacity: 0.5;
+  transform: translateY(0px);
+}
+
+.submit-btn:active .front {
+  transform: translateY(-2px);
+}
+
+/*--------------------recommendations--------------------*/
+.recommendations {
+  background-color: rgba(242, 152, 19, 0.6);
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  padding: 30px;
 }

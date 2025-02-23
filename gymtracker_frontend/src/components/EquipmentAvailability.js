@@ -23,7 +23,7 @@ const machines = [
 export const EquipmentAvailability = () => {
     const [query, setQuery] = useState("");
 
-    const filter = machines.filter((machine) =>
+    const filteredMachines = machines.filter((machine) =>
         machine.name.toLowerCase().includes(query.toLowerCase()) ||
         machine.muscles.some((muscle) =>
             muscle.toLowerCase().includes(query.toLowerCase())
@@ -47,8 +47,8 @@ export const EquipmentAvailability = () => {
                 </div>
 
                 <div className="machines-list">
-                    {filter.length > 0 && (
-                        filter.map((machine, index) => (
+                    {filteredMachines.length > 0 && (
+                        filteredMachines.map((machine, index) => (
                             <div className="machine" key={index} style={{animationDelay: `${index * 0.1}s`}}>
                                 <h2>{machine.name}</h2>
                                 <h5>Muscles targeted: {machine.muscles.join(", ")}</h5>
