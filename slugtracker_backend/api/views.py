@@ -41,57 +41,45 @@ class EquipmentList(APIView):
     
 @api_view(['POST'])
 def generate_workout(request):
-    selected_muscles = request.data.get('muscles', []) #gets muscles
+    selected_muscles = request.data.get('muscles', [])
     if not selected_muscles:
-        return Response({"error": "select muscles pls"})
-    
+        return Response({"error": "Select muscles please"}, status=status.HTTP_400_BAD_REQUEST)
 
-    sys_instruct = "you are santa clause" #system instructions for AI, switch sys and prompt
+    sys_instruct = "you're santa clause."
+
     prompt = (
         f"You are a professional fitness trainer and you do not need to introduce yourself "
         f"or workout concepts because you are well acquainted with the user."
-        f"ONLY Generate a full workout plan for {','.join(selected_muscles)} based on the following equipment "
-        f"available at the gym: {','.join(Eastfield_Equipment)}."
+        f"ONLY Generate a full workout plan for {', '.join(selected_muscles)} based on the following equipment "
+        f"available at the gym: {', '.join(Eastfield_Equipment)}."
     )
-    #was returning undetermined string literal error thats y f strings r there
+
+    full_prompt = f"{sys_instruct}\n\n{prompt}"
 
     generation_config = GenerationConfig(
-        temperature = 0.5,
-        system_instructions=sys_instruct,
+        temperature=0.5,
         top_p=0.9,
         top_k=40
     )
-
+            #temp - argmax sampling , adjusts probability distributio of answers. high = confident, low = random
+            #top_p - nucleus sampling, only consider top p% of prob mass.
+            #top_k - k most probable tokens & redistributes probability mass among them. basically only top k tokens are considered
     try:
-
         model = genai.GenerativeModel('gemini-2.0-flash')
         reply = model.generate_content(
-            prompt,
-            temperature=0.5
-            )
-        """
-        reply = model.generate_content(
-            prompt,
-            system_instructions = sys_instruct,
-            temperature = 0.5,
-            top_p = 0.9,
-            top_k = 40,
-        )"""
-                    #temp - argmax sampling , adjusts probability distributio of answers. high = confident, low = random
-                    #top_p - nucleus sampling, only consider top p% of prob mass. 
-                    #top_k - k most probable tokens & redistributes probability mass among them. basically only top k tokens are considered
+            full_prompt,
+            generation_config=generation_config,
+        )
+
         recommendations = reply.text
+
         if reply.prompt_feedback and reply.prompt_feedback.block_reason:
-            return Response({"error": "model blocked"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"error": "Model blocked"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+        return Response(recommendations, status=status.HTTP_200_OK)
 
-        """recommendations = {
-            "Plan:" f"Workout Plan for {',' .join(selected_muscles)}", #dummy logic until we implement gemini API
-        }"""
-        return Response(recommendations, status=status.HTTP_200_OK) #returns response with status code 200 (basically an all good)
     except Exception as e:
         print(f"Error generating workout: {e}")
-        return Response({f"Error generating workout:", " {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR) #returns response with status code 500 (internal server error)
+        return Response({"error": f"Error generating workout: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-generate_workout = csrf_exempt(generate_workout) #csrf_exempt decorator to disable csrf protection for this view. prevents cross site request forgery
-
+generate_workout = csrf_exempt(generate_workout)
