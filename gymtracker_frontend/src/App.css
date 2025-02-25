@@ -629,61 +629,61 @@ input:focus {
   flex-direction: column;
   align-items: center;
 }
+/* New Component Styles for WorkoutRecommendations */
 
-/*--------------------workout header--------------------*/
-.workout-header h1 {
+/* Overall page */
+.workout-recommendations-page {
+  background-image: url("images/home-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Main title and subtitle */
+.main-title {
   font-size: 45px;
   letter-spacing: 10px;
-  color:  #003c6c;
+  color: #003c6c;
   margin-top: 50px;
   transition: transform 0.2s ease-out;
 }
 
-/*--------------------workout header animation--------------------*/
-.workout-header h1:hover {
+.main-title:hover {
   transform: scale(1.05);
 }
 
-.workout-header h1:not(:hover) {
-  transform: scale(1);
+.subtitle {
+  color: #003c6c;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
-/*--------------------muscle groups--------------------*/
-.workout-content {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  gap: 30px;
-  margin: 50px;
+/* Selection area */
+.selection-area {
+  flex: 1;
 }
 
-.muscle-groups {
-  background-color: rgba(0, 59, 108, 0.6);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 60px;
-}
-
-.muscle-grid {
+/* Muscle groups grid */
+.muscle-groups-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  flex: 0.5;
-  padding-bottom: 45px;
+  gap: 20px;
+  background-color: rgba(0, 59, 108, 0.6);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 20px;
 }
 
-.muscle-grid.disabled {
+.muscle-groups-grid.disabled {
   opacity: 0.5;
   pointer-events: none;
 }
 
-.muscle-grid h1 {
-  text-align: center;
-  font-size: 30px;
-  padding-bottom: 15px;
-  letter-spacing: 7px;
+/* Individual muscle groups */
+.muscle-group {
+  padding-bottom: 20px;
 }
 
 .push-group, .pull-group {
@@ -694,240 +694,248 @@ input:focus {
   padding-top: 10px;
 }
 
-/*--------------------select muscle--------------------*/
-.muscle {
-  font-size: 12px;
+.group-title {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 15px;
+  letter-spacing: 7px;
+  color: white;
+}
+
+/* Muscles container */
+.muscles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual muscle items */
+.muscle-item {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-left: 10px;
   padding: 5px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.select-muscle {
+.muscle-item:hover {
+  transform: translateX(5px);
+}
+
+.muscle-item.active {
+  background-color: rgba(242, 152, 19, 0.2);
+  border-radius: 5px;
+}
+
+/* Muscle selector (checkbox) */
+.muscle-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-circle {
   border: 2px solid white;
   border-radius: 50%;
   height: 14px;
   width: 14px;
-  transition: background-color 0.3, transform 0.3;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/*--------------------select muscle animation--------------------*/
-.select-muscle:hover {
+.select-circle:hover {
   transform: scale(1.2);
 }
 
-.select-muscle.selected {
+.select-circle.selected {
   background-color: #f29813;
   animation: selectExpand 0.1s ease-in-out;
 }
 
-.select-muscle.unselected {
+.select-circle.unselected {
   background-color: transparent;
   animation: unselectExpand 0.1s ease-in-out;
 }
 
-@keyframes selectExpand {
-  0% {
-    transform: scale(1.2);
-  }
-
-  25% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(1.2);
-  }
+/* Checkmark inside the circle */
+.checkmark {
+  background-color: white;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes unselectExpand {
-  0% {
-    transform: scale(1.2);
-  }
-
-  25% {
-    transform: scale(1.5);
-  }
-
-  100% {
-    transform: scale(1.2);
-  }
+.muscle-name {
+  color: white;
+  font-size: 12px;
 }
 
-/*--------------------submit btn--------------------*/
-.submit-btn {
+/* Generate button */
+.generate-button {
   background-color: #9e5e00;
   border: none;
   border-radius: 12px;
-  padding: 0;
-  cursor: pointer;
-}
-
-.front {
-  display: block;
-  background-color: #f29813;
   color: white;
-  border-radius: 12px;
   font-size: 20px;
   letter-spacing: 2px;
   padding: 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 0 #6e4200;
   transform: translateY(-6px);
 }
 
-.submit-btn:disabled {
-  pointer-events: none;
+.generate-button:hover:not(.disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 #6e4200;
 }
 
-.submit-btn:disabled .front {
-  opacity: 0.5;
-  transform: translateY(0px);
-}
-
-.submit-btn:active .front {
+.generate-button:active:not(.disabled) {
   transform: translateY(-2px);
+  box-shadow: 0 2px 0 #6e4200;
 }
 
-/*--------------------recommendations--------------------*/
-.recommendations {
+.generate-button.disabled {
+  background-color: #9e5e00;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Results area */
+.results-area {
   background-color: rgba(242, 152, 19, 0.6);
   border-radius: 10px;
   flex: 1;
-  text-align: center;
   padding: 30px;
+  min-height: 400px;
+  color: white;
 }
 
-.recommendations h1 {
+/* Loading indicator */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+}
+
+.loading-spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.spinner-circle {
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Workout plan container */
+.workout-plan-container {
+  height: 100%;
+}
+
+.results-title {
   font-family: Roboto;
-  letter-spacing : 7px;
+  letter-spacing: 7px;
   font-size: 35px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/*--------------------workout resizing--------------------*/
+.workout-plan-content {
+  text-align: left;
+}
+
+.workout-paragraph {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 16px;
+  white-space: pre-line;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 350px;
+}
+
+.empty-illustration {
+  margin-bottom: 20px;
+}
+
+.empty-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.empty-description {
+  font-size: 16px;
+  max-width: 80%;
+}
+
+/* Responsive styles */
 @media (max-width: 996px) {
-  .workout-header h1 {
-    font-size: 43px;
+  .muscle-groups-grid {
+    grid-template-columns: 1fr;
   }
-
-  .muscle-groups {
-    width: 50%;
-  }
-
-  .muscle-grid h1 {
-    font-size: 25px;
-  }
-
-  .muscle {
-    font-size: 12px;
+  
+  .results-title {
+    font-size: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .workout-header h1 {
-    font-size: 34px;
-    letter-spacing: 8px;
+  .workout-content {
+    flex-direction: column;
   }
-
-  .muscle-groups {
-    padding:20px 50px;
+  
+  .selection-area, .results-area {
+    width: 100%;
   }
-
-  .muscle-grid {
-    padding-bottom: 35px;
-  }
-
-  .muscle-grid h1 {
-    font-size: 23px;
-    letter-spacing: 5px;
-  }
-
-  .recommendations h1 {
-    font-size: 28px;
+  
+  .group-title {
+    font-size: 25px;
   }
 }
 
 @media (max-width: 576px) {
   .workout-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .workout-header {
-    text-align: center;
-  }
-
-  .workout-header h1 {
-    font-size: 28px;
-    letter-spacing: 7px;
-  }
-
-  .muscle-grid {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .muscle-grid h1 {
-    font-size: 33px;
-    letter-spacing: 7px;
-  }
-
-  .push-group, .pull-group, .legs-group, .abs-group {
-    padding-bottom: 20px;
-  }
-
-  .muscle-grid h3 {
-    font-size: 21px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
-  }
-
-  .muscle-groups {
-    padding: 30px 30px;
-    width: 80%;
+    margin: 20px;
+    width: 90%;
   }
   
-  .recommendations {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-  }
-
-  .recommendations h1 {
-    font-size: 23px;
+  .results-title {
+    font-size: 24px;
     letter-spacing: 5px;
   }
-}
-
-/* max width 500px added for oversized heading */
-@media (max-width: 500px) {
-  .workout-header h1 {
-    font-size: 25px;
-    letter-spacing: 5px;
-    margin-left: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .muscle-grid h1 {
-    font-size: 30px;
-  }
-
-  .recommendations {
-    padding: 15px 10px; 
-  }
-}
-
-/* BASIC CSS FOR WORKOUT PLAN */
-
-.workout-plan-text {
-  white-space: pre-line; 
-  font-family: Arial, sans-serif; 
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6; 
 }
