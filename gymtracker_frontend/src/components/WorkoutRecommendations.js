@@ -161,7 +161,7 @@ export const WorkoutRecommendations = () => {
                     </div>
 
                     <div className="recommendations">
-                        <h1>{isGenerating ? "Creating workout plan..." : ""}</h1>
+                        <h1>{isGenerating ? "Creating Workout Plan..." : ""}</h1>
                     </div>
                 </div>
             </div>
