@@ -1,5 +1,5 @@
 """
-WSGI config for gymtracker project.
+WSGI config for slugtracker_backend project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gymtracker.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'slugtracker_backend.settings')
 
 application = get_wsgi_application()
