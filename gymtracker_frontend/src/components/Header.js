@@ -18,7 +18,7 @@ export const Header = () => {
 
                 <ul className="nav-links">
                     <li>
-                        <Link to="/equipment-availability">Equipment Availability</Link>
+                        <Link to="/equipment-list">Equipment List</Link>
                     </li>
                 </ul>
 

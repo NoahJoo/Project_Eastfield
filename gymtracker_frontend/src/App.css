@@ -684,7 +684,6 @@ input:focus {
   font-size: 30px;
   padding-bottom: 15px;
   letter-spacing: 7px;
-  /* text-transform: uppercase; */
 }
 
 .push-group, .pull-group {
@@ -713,7 +712,6 @@ input:focus {
   width: 14px;
   transition: background-color 0.3, transform 0.3;
 }
-
 
 /*--------------------select muscle animation--------------------*/
 .select-muscle:hover {
@@ -806,7 +804,12 @@ input:focus {
   font-size: 35px;
 }
 
+/*--------------------workout resizing--------------------*/
 @media (max-width: 996px) {
+  .workout-header h1 {
+    font-size: 43px;
+  }
+
   .muscle-groups {
     width: 50%;
   }
@@ -815,33 +818,28 @@ input:focus {
     font-size: 25px;
   }
 
-  .muslces {
+  .muscle {
     font-size: 12px;
-  }
-
-  .workout-header h1{
-    font-size: 43px;
   }
 }
 
 @media (max-width: 768px) {
+  .workout-header h1 {
+    font-size: 34px;
+    letter-spacing: 8px;
+  }
+
   .muscle-groups {
     padding:20px 50px;
   }
 
   .muscle-grid {
     padding-bottom: 35px;
-    
   }
 
   .muscle-grid h1 {
     font-size: 23px;
     letter-spacing: 5px;
-  }
-
-  .workout-header h1 {
-    font-size: 34px;
-    letter-spacing: 8px;
   }
 
   .recommendations h1 {
@@ -872,13 +870,13 @@ input:focus {
     flex-direction: column;
   }
 
-  .push-group, .pull-group, .legs-group, .abs-group {
-    padding-bottom: 20px;
-  }
-
   .muscle-grid h1 {
     font-size: 33px;
     letter-spacing: 7px;
+  }
+
+  .push-group, .pull-group, .legs-group, .abs-group {
+    padding-bottom: 20px;
   }
 
   .muscle-grid h3 {
@@ -886,6 +884,7 @@ input:focus {
     padding-top: 2.5px;
     padding-bottom: 2.5px;
   }
+
   .muscle-groups {
     padding: 30px 30px;
     width: 80%;

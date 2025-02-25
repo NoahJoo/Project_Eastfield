@@ -17,10 +17,9 @@ const machines = [
     {name: "Hip and Glute", muscles: ["legs (glutes)"]},
     {name: "Calf Raise", muscles: ["calves"]},
     {name: "Abdominal Crunch", muscles: ["abs"]}
-    
 ]
 
-export const EquipmentAvailability = () => {
+export const EquipmentList = () => {
     const [query, setQuery] = useState("");
 
     const filteredMachines = machines.filter((machine) =>
