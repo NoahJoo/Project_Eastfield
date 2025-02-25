@@ -53,8 +53,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"     # react dev server
+    "http://localhost:3000"     # react dev server, change when deploying
 ]
 
 ROOT_URLCONF = 'slugtracker_backend.urls'

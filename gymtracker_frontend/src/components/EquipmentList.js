@@ -1,5 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react"; //effect syncs w/ other components
 
+
+//redundant now b/c actively calling from database
 const machines = [
     {name: "Chest Press", muscles: ["chest", "shoulders (front delts)", "triceps"]},
     {name: "Chest Fly", muscles: ["chest", "shoulders (front delts)"]},
@@ -19,8 +21,15 @@ const machines = [
     {name: "Abdominal Crunch", muscles: ["abs"]}
 ]
 
-export const EquipmentList = () => {
+export const EquipmentList = () => { //calls equipment list from django backend
+    const [machines, setMachines] = useState([]);
     const [query, setQuery] = useState("");
+    
+    useEffect(() => {
+        fetch("http://localhost:8000/machines")
+        .then(response => response.json())
+        .then(data => setMachines(data));
+    }, []);
 
     const filteredMachines = machines.filter((machine) =>
         machine.name.toLowerCase().includes(query.toLowerCase()) ||

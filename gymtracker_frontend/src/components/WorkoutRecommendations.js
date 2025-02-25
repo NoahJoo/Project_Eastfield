@@ -16,9 +16,39 @@ export const WorkoutRecommendations = () => {
         setInteractedMuscles([...interactedMuscles, muscle])
     }
 
-    const handleButtonClick = () => {
-        setIsGenerating(!isGenerating);
-    }
+    const handleButtonClick = async () => {
+        if (!isGenerating && selectedMuscles.length > 0) {
+            setIsGenerating(true);
+            setWorkOutPlan("Generating Workout Plan..."); //add some cool animation or smthn idk
+            try {
+                const response = await fetch("http://127.0.0.1:8000/api/workout/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({muscles: selectedMuscles})
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    setWorkOutPlan(data.plan);
+                }
+                else
+                {
+                    setWorkOutPlan("Error occured while generating workout plan");
+                }
+
+            } catch (error) {
+                console.log(error);
+                setWorkOutPlan("Error occured while generating workout plan");  
+            }
+            setIsGenerating(false);
+        } else {
+            setWorkOutPlan("");
+            setIsGenerating(false); 
+        }
+        //setIsGenerating(!isGenerating); legacy code dont need unless u wanna delete this
+    };
+
 
     return (
         <div className="workout-page">
