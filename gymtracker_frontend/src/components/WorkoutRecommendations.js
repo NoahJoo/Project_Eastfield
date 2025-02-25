@@ -4,6 +4,7 @@ export const WorkoutRecommendations = () => {
     const [selectedMuscles, setSelectedMuscles] = useState([]);
     const [interactedMuscles, setInteractedMuscles] = useState([]);
     const [isGenerating, setIsGenerating] = useState(false);
+    const [workOutPlan, setWorkOutPlan] = useState(""); //new workout plan state 
 
     const handleClick = (muscle) => {
         if (selectedMuscles.includes(muscle)) {
@@ -21,7 +22,7 @@ export const WorkoutRecommendations = () => {
             setIsGenerating(true);
             setWorkOutPlan("Generating Workout Plan..."); //add some cool animation or smthn idk
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/workout/", {
+                const response = await fetch("http://127.0.0.1:8000/api/workout/", { //change this to the actual api link later
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -31,6 +32,7 @@ export const WorkoutRecommendations = () => {
                 const data = await response.json();
                 if (response.ok) {
                     setWorkOutPlan(data.plan);
+                    console.log("successfully generated/updated workout plan");
                 }
                 else
                 {
@@ -40,13 +42,16 @@ export const WorkoutRecommendations = () => {
             } catch (error) {
                 console.log(error);
                 setWorkOutPlan("Error occured while generating workout plan");  
+                console.log("error w/api call");
             }
             setIsGenerating(false);
         } else {
             setWorkOutPlan("");
             setIsGenerating(false); 
+            console.log("not generating, reset");
         }
         //setIsGenerating(!isGenerating); legacy code dont need unless u wanna delete this
+        console.log("everything went well it should render")
     };
 
 
@@ -192,6 +197,12 @@ export const WorkoutRecommendations = () => {
 
                     <div className="recommendations">
                         <h1>{isGenerating ? "Creating Workout Plan..." : ""}</h1>
+                        {workOutPlan && !isGenerating && ( //basic JS to render the workout recommendations when they've generated.
+                        //PLEASE MAKE THIS LOOK NICE WITH GOOD UI/UX PLEASE!!! I'm in charge of back end and idk a lot about UI tbh
+                            <div className = "workout-plan">
+                                <p classname = "workout-plan-text"> {workOutPlan} </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

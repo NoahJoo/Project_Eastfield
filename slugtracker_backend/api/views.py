@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.response import Response
 
 from django.http import HttpResponse
+
 #gemini imports
 import os
 
@@ -27,7 +28,7 @@ Eastfield_Equipment = [
 ]
 
 
-# API_KEY = os.environ.get("AIzaSyBS8amvlNBnCsZtYXYHBd73z3y3TjWZR4U") #use yo own api key lmao
+# API_KEY = os.environ.get("GOOGLE_API_KEY") #use yo own api key lmao
 API_KEY = "AIzaSyBS8amvlNBnCsZtYXYHBd73z3y3TjWZR4U"
 
 genai.configure(api_key=API_KEY)
@@ -45,12 +46,11 @@ def generate_workout(request):
     if not selected_muscles:
         return Response({"error": "Select muscles please"}, status=status.HTTP_400_BAD_REQUEST)
 
-    sys_instruct = "you're santa clause."
+    sys_instruct = "You are a professional fitness trainer writing down a workout plan for a client. Your goal is to generate a workout plan using as few written characters as possible. Do not use asterisks at all"
+    #^ Prepare the above b/c we can send direct using JSON format to improve UI.
 
     prompt = (
-        f"You are a professional fitness trainer and you do not need to introduce yourself "
-        f"or workout concepts because you are well acquainted with the user."
-        f"ONLY Generate a full workout plan for {', '.join(selected_muscles)} based on the following equipment "
+        f"Generate a full, bullet pointed workout plan for {', '.join(selected_muscles)} based on the following equipment "
         f"available at the gym: {', '.join(Eastfield_Equipment)}."
     )
 
@@ -76,7 +76,7 @@ def generate_workout(request):
         if reply.prompt_feedback and reply.prompt_feedback.block_reason:
             return Response({"error": "Model blocked"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-        return Response(recommendations, status=status.HTTP_200_OK)
+        return Response({"plan": recommendations}, status=status.HTTP_200_OK) #RETURNS JSON FUCK ME. JSON KEYS HAVE TO BE EXACT AND ARE CASE SENSITIVE
 
     except Exception as e:
         print(f"Error generating workout: {e}")
