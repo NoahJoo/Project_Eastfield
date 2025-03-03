@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 export const Home = () => {
@@ -6,6 +6,9 @@ export const Home = () => {
   const [countAnimation, setCountAnimation] = useState(false);
   const [status, setStatus] = useState("FULL");
   const [waitingTime, setWaitingTime] = useState("STAY HOME");
+  const [isInView, setIsInView] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const gymScheduleRef = useRef(null);
 
   // Simulate real-time updates
   useEffect(() => {
@@ -37,6 +40,30 @@ export const Home = () => {
     
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const currentGymScheduleRef = gymScheduleRef.current
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setIsInView(true);
+          setHasAnimated(true)
+        }
+      },
+      {threshold: 0.3}
+    );
+
+    if (currentGymScheduleRef) {
+      observer.observe(currentGymScheduleRef);
+    }
+
+    return () => {
+      if (currentGymScheduleRef) {
+        observer.unobserve(currentGymScheduleRef);
+      }
+    }
+  }, [hasAnimated]);
   
   // Get status class
   const getStatusClass = () => {
@@ -162,20 +189,22 @@ export const Home = () => {
         </motion.div>
 
         <motion.div 
-          className="gym-schedule"
+          ref={gymScheduleRef}
+          className={`gym-schedule ${isInView ? "animate-in": ""}`}
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <motion.h1 
+            ref={gymScheduleRef}
             className="schedule-header"
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
             transition={{ duration: 0.5 }}
           >
             GYM HOURS
           </motion.h1>
-
+          
           <motion.div 
             className="schedule-container"
             initial={{ opacity: 0 }}
@@ -185,9 +214,10 @@ export const Home = () => {
             <div className="days">
               {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => (
                 <motion.h3 
+                  ref={gymScheduleRef}
                   key={day}
                   initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
                   transition={{ duration: 0.3, delay: 0.1 * index }}
                 >
                   {day}
@@ -206,9 +236,10 @@ export const Home = () => {
                 "8:00 AM - 8:00 PM"
               ].map((time, index) => (
                 <motion.h3 
+                  ref={gymScheduleRef}
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 20 }}
                   transition={{ duration: 0.3, delay: 0.1 * index }}
                 >
                   {time}

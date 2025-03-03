@@ -24,9 +24,23 @@ from django.views.decorators.csrf import csrf_exempt #security measure to preven
 
 #views are just the logic that handles reqs from users and determine response, data, html, json, redirect, error, etc. Make decisions based on user input
 Eastfield_Equipment = [
-
+    {"name": "Chest Press", "muscles": ["chest", "shoulders (front delts)", "triceps"]},
+    {"name": "Chest Fly", "muscles": ["chest", "shoulders (front delts)"]},
+    {"name": "Shoulder Press", "muscles": ["shoulders (front delts, side delts)"]},
+    {"name": "Lateral Raise", "muscles": ["shoulders (side delts)"]},
+    {"name": "Lat Pulldown", "muscles": ["back (lats)", "biceps"]},
+    {"name": "Row", "muscles": ["back (lats, traps)", "shoulders (rear delts)"]},
+    {"name": "Back Extension", "muscles": ["back (erector spinae)"]},
+    {"name": "Preacher Curl", "muscles": ["biceps"]},
+    {"name": "Tricep Extension", "muscles": ["triceps"]},
+    {"name": "Leg Press", "muscles": ["legs (quads, hamstrings, glutes)"]},
+    {"name": "Leg Extension", "muscles": ["legs (quads)"]},
+    {"name": "Leg Curl", "muscles": ["legs (hamstrings)"]},
+    {"name": "Hip Abductor", "muscles": ["legs (glutes)"]},
+    {"name": "Hip and Glute", "muscles": ["legs (glutes)"]},
+    {"name": "Calf Raise", "muscles": ["calves"]},
+    {"name": "Abdominal Crunch", "muscles": ["abs"]}
 ]
-
 
 # API_KEY = os.environ.get("GOOGLE_API_KEY") #use yo own api key lmao
 API_KEY = "AIzaSyBS8amvlNBnCsZtYXYHBd73z3y3TjWZR4U"
@@ -51,7 +65,7 @@ def generate_workout(request):
 
     prompt = (
         f"Generate a full, bullet pointed workout plan for {', '.join(selected_muscles)} based on the following equipment "
-        f"available at the gym: {', '.join(Eastfield_Equipment)}."
+        f"available at the gym: {', '.join([eq['name'] for eq in Eastfield_Equipment])}."
     )
 
     full_prompt = f"{sys_instruct}\n\n{prompt}"
