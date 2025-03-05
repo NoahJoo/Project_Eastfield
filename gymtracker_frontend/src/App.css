@@ -664,6 +664,12 @@ input:focus {
   font-size: 16px;
 }
 
+/* Workout content */
+.workout-content {
+  width: 60%;
+  margin-bottom: 50px;
+}
+
 /* Selection area */
 .selection-area {
   flex: 1;
@@ -904,7 +910,7 @@ input:focus {
 
 .empty-description {
   font-size: 16px;
-  max-width: 80%;
+  max-width: 60%;
 }
 
 /* Responsive styles */
