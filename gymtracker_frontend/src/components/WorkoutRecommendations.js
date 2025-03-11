@@ -229,13 +229,13 @@ export const WorkoutRecommendations = () => {
                     
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round">
-                      <rect x="3" y="8" width="2" height="8"/>
-                      <rect x="1" y="9" width="2" height="6"/>
+                      <rect x="4" y="8" width="2" height="8"/>
+                      <rect x="2" y="9" width="2" height="6"/>
 
                       <rect x="18" y="8" width="2" height="8"/>
                       <rect x="20" y="9" width="2" height="6"/>
 
-                      <line x1="5" y1="12" x2="18" y2="12" strokeWidth="1.5"/>
+                      <line x1="6" y1="12" x2="18" y2="12" strokeWidth="1.5"/>
                     </svg>
 
                   </div>
