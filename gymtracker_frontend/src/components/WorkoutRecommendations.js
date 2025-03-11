@@ -226,9 +226,7 @@ export const WorkoutRecommendations = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="empty-illustration">
-                    
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 4 24 16" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round">
                       <rect x="4" y="8" width="2" height="8"/>
                       <rect x="2" y="9" width="2" height="6"/>
 
@@ -237,8 +235,8 @@ export const WorkoutRecommendations = () => {
 
                       <line x1="6" y1="12" x2="18" y2="12" strokeWidth="1.5"/>
                     </svg>
-
                   </div>
+
                   <h3 className="empty-title">Select muscles to get started</h3>
                   <p className="empty-description">Choose the muscle groups you want to target and click the "Generate Workout" button</p>
                 </motion.div>
