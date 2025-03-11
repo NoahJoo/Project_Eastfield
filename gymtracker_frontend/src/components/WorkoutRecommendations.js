@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const WorkoutRecommendations = () => {
@@ -226,17 +226,18 @@ export const WorkoutRecommendations = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="empty-illustration">
-                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17 17.9999C19.2091 17.9999 21 16.209 21 13.9999C21 11.7908 19.2091 9.99994 17 9.99994C14.7909 9.99994 13 11.7908 13 13.9999C13 16.209 14.7909 17.9999 17 17.9999Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M17 14V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M17 13C17.2761 13 17.5 12.7761 17.5 12.5C17.5 12.2239 17.2761 12 17 12C16.7239 12 16.5 12.2239 16.5 12.5C16.5 12.7761 16.7239 13 17 13Z" fill="currentColor" stroke="currentColor" strokeWidth="0.5"/>
-                      <path d="M7 16.9999C9.20914 16.9999 11 15.2091 11 12.9999C11 10.7908 9.20914 8.99994 7 8.99994C4.79086 8.99994 3 10.7908 3 12.9999C3 15.2091 4.79086 16.9999 7 16.9999Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M7 13V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M7 12C7.27614 12 7.5 11.7761 7.5 11.5C7.5 11.2239 7.27614 11 7 11C6.72386 11 6.5 11.2239 6.5 11.5C6.5 11.7761 6.72386 12 7 12Z" fill="currentColor" stroke="currentColor" strokeWidth="0.5"/>
-                      <path d="M12 7V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 21V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M16 3L8 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round">
+                      <rect x="3" y="8" width="2" height="8"/>
+                      <rect x="1" y="9" width="2" height="6"/>
+
+                      <rect x="18" y="8" width="2" height="8"/>
+                      <rect x="20" y="9" width="2" height="6"/>
+
+                      <line x1="5" y1="12" x2="18" y2="12" strokeWidth="1.5"/>
                     </svg>
+
                   </div>
                   <h3 className="empty-title">Select muscles to get started</h3>
                   <p className="empty-description">Choose the muscle groups you want to target and click the "Generate Workout" button</p>
