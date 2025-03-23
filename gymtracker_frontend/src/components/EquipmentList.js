@@ -1,4 +1,4 @@
-import React, {useState} from "react"; //effect syncs w/ other components
+import React, { useState } from "react"; //effect syncs w/ other components
 import { motion } from "framer-motion";
 
 export const EquipmentList = () => { //calls equipment list from django backend
@@ -51,10 +51,16 @@ export const EquipmentList = () => { //calls equipment list from django backend
                 <div className="machines-list">
                     {filteredMachines.length > 0 && (
                         filteredMachines.map((machine, index) => (
-                            <div className="machine" key={index} style={{animationDelay: `${index * 0.1}s`}}>
+                            <motion.div
+                                className="machine"
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: index * 0.1}}
+                            >
                                 <h2>{machine.name}</h2>
                                 <h5>Muscles targeted: {machine.muscles.join(", ")}</h5>
-                            </div>
+                            </motion.div>
                         ))
                     )}
                 </div>

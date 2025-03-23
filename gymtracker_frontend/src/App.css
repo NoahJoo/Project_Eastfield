@@ -552,7 +552,6 @@ input:focus {
   margin-bottom: 15px;
   padding: 12px 15px;
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .machine h2 {
@@ -600,19 +599,6 @@ input:focus {
 @media (max-width: 576px) {
   .machine h5 {
     letter-spacing: 1px;
-  }
-}
-
-/*--------------------machine animation--------------------*/
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
   }
 }
 
