@@ -43,7 +43,7 @@ Eastfield_Equipment = [
 ]
 
 # API_KEY = os.environ.get("GOOGLE_API_KEY") #use yo own api key lmao
-API_KEY = "new api key"
+API_KEY = "api key"
 
 genai.configure(api_key=API_KEY)
 
