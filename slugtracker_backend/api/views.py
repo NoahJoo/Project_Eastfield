@@ -12,6 +12,7 @@ from django.http import HttpResponse
 
 #gemini imports
 import os
+from dotenv import load_dotenv
 
 import google.generativeai as genai
 from google.generativeai import GenerationConfig
@@ -43,7 +44,8 @@ Eastfield_Equipment = [
 ]
 
 # API_KEY = os.environ.get("GOOGLE_API_KEY") #use yo own api key lmao
-API_KEY = "api key"
+load_dotenv()
+API_KEY = os.environ.get("GOOGLE_API_KEY")
 
 genai.configure(api_key=API_KEY)
 
